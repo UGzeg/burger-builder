@@ -40,7 +40,7 @@ const MalzemeSecimi = (props) => {
                     </ul>
                 </div> 
                 <div className="box-price">
-                    <h3>Fiyat {toplamFiyat}</h3>
+                    <h3>Fiyat {toplamFiyat}₺</h3>
                 </div>
             </div>
         </div>
