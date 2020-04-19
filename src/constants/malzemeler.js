@@ -16,7 +16,7 @@ const malzemeler = [
     {
         id: 3,
         name: "Köfte",
-        color: "black",
+        color: "#450101",
         price: 6,
         count: 0
     },

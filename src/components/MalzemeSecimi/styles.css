@@ -1,0 +1,97 @@
+*{
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+.main {
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.box{
+    margin: auto;
+    width: 350px;
+}
+.box-title{
+    border: black 2px solid;
+    padding: 10px;
+    margin-bottom: 0px;
+    border-bottom: black 1px solid;
+}
+.box-item{
+    border: black 2px solid;
+    text-align: left;
+    width: 100%;
+    border-top: black 1px solid;
+    border-bottom: black 1px solid;
+}
+.box-item ul{
+    margin: 0;
+    width: 100%;
+    padding: 10px;
+}
+
+.box-item ul li{
+    width: 100%;
+}
+
+.box-item-left{
+    width: 33.3%;
+    display: inline-block;
+    padding: 10px 10px;
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px;
+    vertical-align: bottom;
+}
+.box-item-center{
+    width: 33.3%;
+    display: inline-block;
+    padding: 10px 10px;
+    margin: 0;
+    font-weight: bold;
+    font-size: large;
+}
+.box-item-right{
+    width: 33.3%;
+    display: inline-block;
+    padding: 10px 10px;
+    margin: 0;
+    font-weight: bold;
+    font-size: large;
+}
+
+.malzeme-ekle {
+    border: 0;
+    width: 100%;
+    padding: 15px 0;
+    background: green;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.malzeme-cikar {
+    border: 0;
+    width: 100%;
+    padding: 15px 0;
+    background: red;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.malzeme-cikar.disabled {
+    background: #c3bfff;
+    pointer-events: none;
+}
+
+.box-price{
+    border: black 2px solid;
+    padding: 10px;
+    margin-top: 0px;
+    border-top: black 1px solid;
+}

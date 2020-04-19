@@ -23,7 +23,7 @@ const Hamburger = (props) => {
                                 borderRadius:"20px"
                             }}
                         >
-                            {malzeme.name}
+                            
                             {/* {malzeme.count} */}
                         </div>;
                         for(let i=0; i< malzeme.count;i++){
