@@ -10,7 +10,8 @@ class HamburgerApp extends Component {
         super(props);
 
         this.state = {
-            secilenMalzemeler: []
+            secilenMalzemeler: [],
+            toplamFiyat: 0
         }
     }
 
@@ -23,14 +24,24 @@ class HamburgerApp extends Component {
             this.setState({
                 secilenMalzemeler: this.state.secilenMalzemeler.map((secilenMalzeme) => {
                     if(secilenMalzeme.id === malzeme.id){
-                        return {...secilenMalzeme, count: secilenMalzeme.count + 1}
+                        return (
+                            this.setState({
+                                toplamFiyat: this.state.toplamFiyat + malzeme.price
+                            }),
+                            {...secilenMalzeme, count: secilenMalzeme.count + 1})
                     }else{
-                        return secilenMalzeme;
+                        return (
+                            this.setState({
+                            toplamFiyat: this.state.toplamFiyat + malzeme.price
+                            }),
+                            secilenMalzeme
+                        );
                     }
-                })
+                }),
             })
         }else{
             this.setState({
+                toplamFiyat: this.state.toplamFiyat + malzeme.price,
                 secilenMalzemeler: [...this.state.secilenMalzemeler, {...malzeme, count: 1}]
             })
         }
@@ -45,26 +56,34 @@ class HamburgerApp extends Component {
             this.setState({
                 secilenMalzemeler: this.state.secilenMalzemeler.map((secilen) => {
                     if(secilen.id === malzeme.id){
-                        return {...secilen, count: secilen.count - 1}
+                        return (
+                            this.setState({
+                            toplamFiyat: this.state.toplamFiyat - malzeme.price
+                        }),
+                        {...secilen, count: secilen.count - 1})
                     }
-                    return secilen;
+                    return (this.state.toplamFiyat, secilen);
                 })
             })
         }else{
             this.setState({
                 secilenMalzemeler: this.state.secilenMalzemeler.filter((secilen) => {
-                    return secilen.id !== malzeme.id
+                    return (
+                        this.setState({
+                        toplamFiyat: this.state.toplamFiyat - malzeme.price
+                        }),secilen.id !== malzeme.id
+                        )
                 })
             })
         }
     }
 
     render() {
-        const {secilenMalzemeler} = this.state;
+        const {secilenMalzemeler, toplamFiyat} = this.state;
         return (
             <div>
                 <Hamburger secilenMalzemeler={secilenMalzemeler}/>
-                <MalzemeSecimi secilenMalzemeler={secilenMalzemeler} malzemeler={malzemeler} malzemeEkle={this.malzemeEkle} malzemeCikar={this.malzemeCikar} />
+                <MalzemeSecimi secilenMalzemeler={secilenMalzemeler} malzemeler={malzemeler} malzemeEkle={this.malzemeEkle} malzemeCikar={this.malzemeCikar} toplamFiyat={toplamFiyat} />
             </div>
         );
     }
