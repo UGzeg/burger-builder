@@ -3,7 +3,7 @@ import "./styles.css";
 import classnames from 'classnames';
 
 const MalzemeSecimi = (props) => {
-    const {secilenMalzemeler, malzemeler,toplamFiyat} = props;
+    const {secilenMalzemeler, malzemeler,toplamFiyat, toplamFiyat2} = props;
     return (
         <div className="main">
             <div className="box">
@@ -40,7 +40,8 @@ const MalzemeSecimi = (props) => {
                     </ul>
                 </div> 
                 <div className="box-price">
-                    <h3>Fiyat {toplamFiyat}₺</h3>
+                    <h3>Fiyat {toplamFiyat}₺</h3> 
+                    <h3>Fiyat {toplamFiyat2}₺</h3>
                 </div>
             </div>
         </div>

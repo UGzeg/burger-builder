@@ -80,10 +80,22 @@ class HamburgerApp extends Component {
 
     render() {
         const {secilenMalzemeler, toplamFiyat} = this.state;
+
+        //2.yol için =>
+        const toplamFonk = (birikim, malzeme) => birikim + (malzeme.count*malzeme.price);
+        const toplamFiyat2 = secilenMalzemeler.length === 0 ? 0 : secilenMalzemeler.reduce(toplamFonk, 0);
+
         return (
             <div>
                 <Hamburger secilenMalzemeler={secilenMalzemeler}/>
-                <MalzemeSecimi secilenMalzemeler={secilenMalzemeler} malzemeler={malzemeler} malzemeEkle={this.malzemeEkle} malzemeCikar={this.malzemeCikar} toplamFiyat={toplamFiyat} />
+                <MalzemeSecimi 
+                    secilenMalzemeler={secilenMalzemeler}
+                    malzemeler={malzemeler}
+                    malzemeEkle={this.malzemeEkle}
+                    malzemeCikar={this.malzemeCikar}
+                    toplamFiyat={toplamFiyat}
+                    toplamFiyat2={toplamFiyat2}
+                    />
             </div>
         );
     }
