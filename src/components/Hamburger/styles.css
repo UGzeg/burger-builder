@@ -1,0 +1,18 @@
+div{
+    text-align: center;
+}
+.malzeme-sifirla {
+    border: 0;
+    width: 15%;
+    padding: 15px 0;
+    background: #24010ee5;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: auto;
+}
+
+.malzeme-sifirla.disabled {
+    visibility: hidden;
+}

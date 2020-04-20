@@ -77,6 +77,12 @@ class HamburgerApp extends Component {
             })
         }
     }
+    sifirla = () => {
+        this.setState({
+            secilenMalzemeler: [],
+            toplamFiyat: 0
+        })
+    }
 
     render() {
         const {secilenMalzemeler, toplamFiyat} = this.state;
@@ -87,15 +93,23 @@ class HamburgerApp extends Component {
 
         return (
             <div>
-                <Hamburger secilenMalzemeler={secilenMalzemeler}/>
-                <MalzemeSecimi 
-                    secilenMalzemeler={secilenMalzemeler}
-                    malzemeler={malzemeler}
-                    malzemeEkle={this.malzemeEkle}
-                    malzemeCikar={this.malzemeCikar}
-                    toplamFiyat={toplamFiyat}
-                    toplamFiyat2={toplamFiyat2}
+                <div className="sol">
+                    <Hamburger
+                        secilenMalzemeler={secilenMalzemeler}
+                        malzemeler={malzemeler}
+                        sifirla={this.sifirla}
                     />
+                </div>
+                <div className="sag">
+                    <MalzemeSecimi 
+                        secilenMalzemeler={secilenMalzemeler}
+                        malzemeler={malzemeler}
+                        malzemeEkle={this.malzemeEkle}
+                        malzemeCikar={this.malzemeCikar}
+                        toplamFiyat={toplamFiyat}
+                        toplamFiyat2={toplamFiyat2}
+                    />
+                </div>
             </div>
         );
     }

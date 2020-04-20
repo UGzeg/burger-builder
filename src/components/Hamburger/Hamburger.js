@@ -1,7 +1,9 @@
 import React from 'react';
 import "./styles.css";
+import classnames from 'classnames';
 
 const Hamburger = (props) => {
+    const sifirlaGoster = props.secilenMalzemeler.length === 0 ? 0 : 1 ;
     // Kapsayici icin React fragment kullaniyoruz.
     return (
         <>
@@ -17,7 +19,7 @@ const Hamburger = (props) => {
                             style={{
                                 height: "20px",
                                 backgroundColor: malzeme.color,
-                                width: "30%",
+                                width: "60%",
                                 margin: "0 auto",
                                 marginTop: "5px",
                                 borderRadius:"20px"
@@ -35,6 +37,13 @@ const Hamburger = (props) => {
                 <div className="BreadBottom" style={{
                     height: "50px"
                 }}/>
+                <button onClick={() => {
+                    props.sifirla()
+                }}
+                className={classnames({
+                    "malzeme-sifirla": true,
+                    "disabled": !sifirlaGoster
+                })}>Sıfırla</button>
             </div>
         </>
     );
