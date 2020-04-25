@@ -11,7 +11,7 @@ class HamburgerApp extends Component {
 
         this.state = {
             secilenMalzemeler: [],
-            toplamFiyat: 0
+            //toplamFiyat: 0
         }
     }
 
@@ -25,15 +25,15 @@ class HamburgerApp extends Component {
                 secilenMalzemeler: this.state.secilenMalzemeler.map((secilenMalzeme) => {
                     if(secilenMalzeme.id === malzeme.id){
                         return (
-                            this.setState({
+                            /*this.setState({
                                 toplamFiyat: this.state.toplamFiyat + malzeme.price
-                            }),
+                            }),*/
                             {...secilenMalzeme, count: secilenMalzeme.count + 1})
                     }else{
                         return (
-                            this.setState({
+                            /*this.setState({
                             toplamFiyat: this.state.toplamFiyat + malzeme.price
-                            }),
+                            }),*/
                             secilenMalzeme
                         );
                     }
@@ -41,7 +41,7 @@ class HamburgerApp extends Component {
             })
         }else{
             this.setState({
-                toplamFiyat: this.state.toplamFiyat + malzeme.price,
+                /*toplamFiyat: this.state.toplamFiyat + malzeme.price,*/
                 secilenMalzemeler: [...this.state.secilenMalzemeler, {...malzeme, count: 1}]
             })
         }
@@ -57,9 +57,9 @@ class HamburgerApp extends Component {
                 secilenMalzemeler: this.state.secilenMalzemeler.map((secilen) => {
                     if(secilen.id === malzeme.id){
                         return (
-                            this.setState({
+                           /* this.setState({
                             toplamFiyat: this.state.toplamFiyat - malzeme.price
-                        }),
+                        }),*/
                         {...secilen, count: secilen.count - 1})
                     }
                     return (this.state.toplamFiyat, secilen);
@@ -69,9 +69,9 @@ class HamburgerApp extends Component {
             this.setState({
                 secilenMalzemeler: this.state.secilenMalzemeler.filter((secilen) => {
                     return (
-                        this.setState({
+                        /*this.setState({
                         toplamFiyat: this.state.toplamFiyat - malzeme.price
-                        }),secilen.id !== malzeme.id
+                        }),*/secilen.id !== malzeme.id
                         )
                 })
             })
@@ -80,7 +80,7 @@ class HamburgerApp extends Component {
     sifirla = () => {
         this.setState({
             secilenMalzemeler: [],
-            toplamFiyat: 0
+            //toplamFiyat: 0
         })
     }
 

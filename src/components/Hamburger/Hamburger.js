@@ -3,7 +3,7 @@ import "./styles.css";
 import classnames from 'classnames';
 
 const Hamburger = (props) => {
-    const sifirlaGoster = props.secilenMalzemeler.length === 0 ? 0 : 1 ;
+    const sifirlaGoster = props.secilenMalzemeler.length === false ? false : true ;
     // Kapsayici icin React fragment kullaniyoruz.
     return (
         <>
